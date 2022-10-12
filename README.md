@@ -1,8 +1,8 @@
 # TestVagrantInterviewRound
-# TestVagrantInterviewTask
-The tool stack used for the framework design is Selenium, JAVA and TestNG.
+
+*The tool stack used for the framework design is Selenium, JAVA and TestNG.
 ---------------------------------------------------------
-It is a Maven project, Used this tool as it helps to arrange dependencies required for building, testing and executinng code with the help of pom.xml file.
+*It is a Maven project, Used this tool as it helps to arrange dependencies required for building, testing and executinng code with the help of pom.xml file.
 ----------------------------------------------------------
 * The main test script class "interview.java" is available under the com.interview.driver.
 * Class which stores the URL of website is available in the com.interview.methods-->AppDependentMethods.java
