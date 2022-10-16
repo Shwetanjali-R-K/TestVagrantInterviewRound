@@ -24,26 +24,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class AppIndependentMethods extends Movies {
 	
 	
-	/*
-	 * Method Name		: jsClickObject()
-	 *
-	*/
-	
-	public boolean jsClickObject(WebDriver oDriver, WebElement objEle)
-	{
-		JavascriptExecutor js = null;
-		try {
-			js = (JavascriptExecutor) oDriver;
-		    js.executeScript("arguments[0].click();", objEle);
-		    System.out.println("==> WebElement with Locator :"+Locator(objEle)+ " clicked successfully");
-		    return true;
-		}catch(Exception e)
-		{
-			System.out.println("Exception in jsClickObject method : "+e);
-			return false;
-		}
-	}
-	
 	/* Method Name		: setObject()*/
 	public boolean setObject(WebDriver oDriver, WebElement objEle, String strValue)
 	{
@@ -74,42 +54,6 @@ public class AppIndependentMethods extends Movies {
 			}
 		}catch(Exception e) {
 			System.out.println("Exception in clickEnter method : "+e);
-			return false;
-		}
-	}
-	/*Method Name		: clearAndSetObject()*/
-	public boolean clearAndSetObject(WebDriver oDriver, WebElement objEle, String strValue)
-	{
-
-		try {
-			if(objEle != null) {
-				objEle.clear();
-				objEle.sendKeys(strValue);
-				System.out.println("==> Cleared & Entered "+strValue+" into Element with Locator "+Locator(objEle));
-				return true;
-			}else {
-				return false;
-			}
-				
-		}catch(Exception e)
-		{
-			System.out.println("Exception in clearAndSetObject method : "+e);
-			return false;
-		}
-	}
-	
-	/* Method Name		: compareValues()*/
-	public boolean compareValues(WebDriver oDriver, String actual, String expected)
-	{
-		try {
-			if(actual.equalsIgnoreCase(expected)) {
-				return true;
-			}else {
-				return false;
-			}
-		}catch(Exception e)
-		{
-			System.out.println("Exception in compareValues method : "+e);
 			return false;
 		}
 	}
