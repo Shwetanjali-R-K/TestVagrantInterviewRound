@@ -124,41 +124,10 @@ public class AppIndependentMethods extends Movies {
 		}
 	}
 
-	/* Method Name		: waitForElement()
-	   Purpose			:
-	*/
-	public boolean waitForElement(WebDriver oDriver, WebElement objEle, String strWaitReason, int timeout)
-	{
-		WebDriverWait oWait = null;
-		try {
-			oWait = new WebDriverWait(oDriver, timeout);
-			
-			switch(strWaitReason.toLowerCase())
-			{
-				
-				case "visible":
-					oWait.until(ExpectedConditions.visibilityOf(objEle));
-					break;
-				case "invisible":
-					oWait.until(ExpectedConditions.invisibilityOf(objEle));
-					break;
-				default:
-					System.out.println("Invalid wait condition '"+strWaitReason+"' was provided");
-			}
-			return true;
-		}catch(Exception e)
-		{
-			System.out.println("Exception in waitForElement() method. " + e);
-			return false;
-		}
-		finally {
-			oWait = null;
-		}
-	}
 	
 	/*
 	 * Method Name		: Locator()
-	 * Purpose			: to get the locator of WebElement
+	 * Purpose	        : to get the locator of WebElement
 	*/
 	public String Locator(WebElement objEle) {
 		try {
