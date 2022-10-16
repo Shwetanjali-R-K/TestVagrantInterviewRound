@@ -28,6 +28,7 @@ public class AppIndependentMethods extends Movies {
 	 * Method Name		: jsClickObject()
 	 *
 	*/
+	/*
 	public boolean jsClickObject(WebDriver oDriver, WebElement objEle)
 	{
 		JavascriptExecutor js = null;
@@ -42,7 +43,7 @@ public class AppIndependentMethods extends Movies {
 			return false;
 		}
 	}
-	
+	*/
 	/* Method Name		: setObject()*/
 	public boolean setObject(WebDriver oDriver, WebElement objEle, String strValue)
 	{
