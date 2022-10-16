@@ -45,7 +45,6 @@ public class GooglePage extends Movies {
 		try {
 			appInd.setObject(oDriver, SearchInputField, moviename);
 			appInd.clickEnter(oDriver,SearchInputField);
-			appInd.waitForElement(oDriver, googleImg, "visible", 25);
 			
 			if(appInd.verifyElementExist(oDriver, googleImg)) {
 				System.out.println("==> Google Search is successful for "+moviename);
