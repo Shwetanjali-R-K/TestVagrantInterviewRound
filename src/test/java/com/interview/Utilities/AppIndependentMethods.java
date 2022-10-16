@@ -135,9 +135,7 @@ public class AppIndependentMethods extends Movies {
 			
 			switch(strWaitReason.toLowerCase())
 			{
-				case "clickable":
-					oWait.until(ExpectedConditions.elementToBeClickable(objEle));
-					break;
+				
 				case "visible":
 					oWait.until(ExpectedConditions.visibilityOf(objEle));
 					break;
