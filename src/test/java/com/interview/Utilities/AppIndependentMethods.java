@@ -124,21 +124,6 @@ public class AppIndependentMethods extends Movies {
 		}
 	}
 
-	
-	/*
-	 * Method Name		: Locator()
-	 * Purpose	        : to get the locator of WebElement
-	*/
-	public String Locator(WebElement objEle) {
-		try {
-			String s = objEle.toString();
-			return s.substring(s.indexOf('>')+2, s.length()-1);
-		}catch(Exception e) {
-			System.out.println("Exception in Locator Method : "+e);
-			return null;
-		}
-	}
-	
 	/*
 	 * Method Name		: FormatDate()
 	 * Purpose			: Converts below mentioned format to YYYY-MM-DD
