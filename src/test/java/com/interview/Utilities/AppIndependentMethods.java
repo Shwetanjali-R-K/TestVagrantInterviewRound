@@ -30,7 +30,7 @@ public class AppIndependentMethods extends Movies {
 		try {
 			if(objEle != null) {
 				objEle.sendKeys(strValue);
-				System.out.println("==> Entered "+strValue+" into Element with Locator "+Locator(objEle));
+				System.out.println("==> Entered "+strValue+" into Element);
 				return true;
 			}else {
 				return false;
