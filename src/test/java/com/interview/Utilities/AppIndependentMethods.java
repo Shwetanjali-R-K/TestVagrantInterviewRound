@@ -24,6 +24,41 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class AppIndependentMethods extends Movies {
 	
 	
+	/*Method Name		: launchBrowser()*/
+	public WebDriver launchBrowser(String browserType)
+	{
+		WebDriver oDriver = null;
+		try {
+			switch(browserType.toLowerCase()) {
+				case "chrome":
+					WebDriverManager.chromedriver().setup();
+					oDriver = new ChromeDriver();
+					break;
+				case "firefox":
+					System.setProperty("webdriver.gecko.driver", ".\\Library\\drivers\\geckodriver.exe");
+					oDriver = new FirefoxDriver();
+					break;
+				default:
+			}
+			
+			if(oDriver!=null) {
+				oDriver.manage().window().maximize();
+				oDriver.manage().deleteAllCookies();
+				
+				oDriver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+				oDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+
+				return oDriver;
+			}else {
+				return null;
+			}
+		}catch(Exception e)
+		{
+			System.out.println("Exception in launchBrowser method : "+e);
+			return null;
+		}
+	}
+	
 	/* Method Name		: setObject()*/
 	public boolean setObject(WebDriver oDriver, WebElement objEle, String strValue)
 	{
@@ -75,40 +110,7 @@ public class AppIndependentMethods extends Movies {
 		}
 	}
 		
-	/*Method Name		: launchBrowser()*/
-	public WebDriver launchBrowser(String browserType)
-	{
-		WebDriver oDriver = null;
-		try {
-			switch(browserType.toLowerCase()) {
-				case "chrome":
-					WebDriverManager.chromedriver().setup();
-					oDriver = new ChromeDriver();
-					break;
-				case "firefox":
-					System.setProperty("webdriver.gecko.driver", ".\\Library\\drivers\\geckodriver.exe");
-					oDriver = new FirefoxDriver();
-					break;
-				default:
-			}
-			
-			if(oDriver!=null) {
-				oDriver.manage().window().maximize();
-				oDriver.manage().deleteAllCookies();
-				
-				oDriver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-				oDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-
-				return oDriver;
-			}else {
-				return null;
-			}
-		}catch(Exception e)
-		{
-			System.out.println("Exception in launchBrowser method : "+e);
-			return null;
-		}
-	}
+	
 		
 	/*Method Name		: closeBrowser()*/
 	public boolean closeBrowser(WebDriver oDriver)
